@@ -83,12 +83,224 @@ font-weight:bold;
 text-align:center;
 }
 
+.rotate-border{
+font-size:70px;
+color:white;
+padding:20px 40px;
+border:5px solid;
+border-image:linear-gradient(0deg,#ff00cc,#00ffff,#00ff99,#ffcc00) 1;
+animation:borderRotate 5s linear infinite;
+}
+
+@keyframes borderRotate{
+0%{border-image-source:linear-gradient(0deg,#ff00cc,#00ffff,#00ff99,#ffcc00)}
+100%{border-image-source:linear-gradient(360deg,#ff00cc,#00ffff,#00ff99,#ffcc00)}
+}
+
+
+.card3{
+width:92%;
+padding:35px 50px;
+
+background:linear-gradient(135deg,#3a1c71,#d76d77,#ffaf7b);
+border-radius:18px;
+
+color:white;
+text-align:center;
+
+box-shadow:0 15px 40px rgba(0,0,0,0.45);
+transition:0.4s;
+}
+
+/* Hover animation (more subtle) */
+.card3:hover{
+transform:scale(1.01);
+}
+
+.card3 p{
+font-size:17px;
+line-height:1.7;
+max-width:900px;
+margin:auto;
+}
+.card-section{
+margin:40px 0;
+}
+/* ===== CARD ===== */
+
+.card{
+width:93%;
+padding:50px;
+border-radius:16px;
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,0.15);
+box-shadow:0 20px 60px rgba(0,0,0,0.7);
+}
+
+/* ===== MAIN BOX STYLE ===== */
+
+.box{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.2);
+padding:12px 20px;
+border-radius:8px;
+text-align:center;
+backdrop-filter:blur(10px);
+box-shadow:0 0 15px rgba(0,255,255,0.3);
+transition:0.3s;
+}
+
+.box:hover{
+transform:scale(1.07);
+box-shadow:0 0 35px rgba(255,0,255,0.6);
+}
+
+/* ===== TREE STRUCTURE ===== */
+
+.tree{
+text-align:center;
+position:relative;
+}
+
+/* ===== TOP NODE ===== */
+
+.top{
+width:350px;
+margin:auto;
+font-size:20px;
+margin-bottom:60px;
+}
+
+/* ===== ROW ===== */
+
+.row{
+display:flex;
+justify-content:center;
+align-items:flex-start;
+gap:40px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+/* ===== COLUMN ===== */
+
+.column{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:12px;
+flex:1;
+max-width:260px;
+}
+
+/* ===== CATEGORY BOX ===== */
+
+.category{
+font-weight:bold;
+margin-bottom:10px;
+}
+
+/* ===== CONNECTOR LINES ===== */
+
+.line{
+width:2px;
+height:40px;
+background:linear-gradient(#00ffff,#ff00ff);
+margin:auto;
+}
+/* CARD */
+
+.card{
+width:93%;
+padding:50px;
+border-radius:16px;
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,0.15);
+box-shadow:0 20px 60px rgba(0,0,0,0.7);
+}
+
+/* GENERAL BOX */
+
+.box{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.2);
+padding:12px 20px;
+border-radius:8px;
+text-align:center;
+box-shadow:0 0 15px rgba(0,255,255,0.3);
+}
+
+/* TREE */
+
+.tree{
+text-align:center;
+}
+
+/* TOP NODE */
+
+.top{
+width:350px;
+margin:auto;
+margin-bottom:20px;
+}
+
+/* CONNECTORS */
+
+.vline{
+width:2px;
+height:40px;
+background:#00ffff;
+margin:auto;
+}
+
+.hline{
+height:2px;
+width:70%;
+background:#00ffff;
+margin:20px auto;
+}
+
+/* GROUP ROW */
+
+.row{
+display:flex;
+justify-content:space-around;
+gap:40px;
+}
+
+/* GROUP BOX */
+
+.group{
+flex:1;
+padding:20px;
+border-radius:10px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.15);
+}
+
+/* GROUP TITLE */
+
+.group-title{
+font-weight:bold;
+margin-bottom:15px;
+}
+
+/* ITEMS */
+
+.items{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
 </style>
 
 </head>
 <body>
+<section> 
 
-<h2 class="team-title">CONVERSATION BETWEEN CLEINT AND DESIGNER</h2>
+<h3 class="rotate-border">CONVERSATION BETWEEN CLEINT AND DESIGNER</h3>
 
 <table class="team-table">
 
@@ -282,6 +494,483 @@ text-align:center;
 </tr>
 
 </table>
+</section>
+<section>
+<h3 class="rotate-border">PROBLEM STATEMENT</h3>
+<div class="card-section">
+ <div class="card3"> 
+      <p>Indoor environments such as homes,classrooms, and offices often
+ lack simple systemsthat can continuously monitor surrounding conditions 
+and detect obstacleswithout human supervision. This creates a need for
+ a small, intelligent device that can move around, observe environmental
+ conditions, and respond to nearby objects to avoid collisions. A 
+"ladybug-inspired Insectronics model" is proposed as a compact 
+mobile system capable of sensing temperature, air quality, and obstacles 
+in its path while navigating safely by turning when an object is detected in 
+front of it. The system is intended to provide timely alerts about environmental 
+changes while remaining energy-efficient, affordable, and small enough 
+to be easily deployed in indoorspaces. 🐞</p>
+      </div>
+	  </div>
+</section>
+<section> 
 
+<h3 class="rotate-border">QUESTIONS FROM USER AND DESIGNERS PERSPECTIVE</h3>
+
+<table class="team-table">
+
+<tr>
+<th>Team</th>
+<th>Functions from User Perspective</th>
+<th>Functions from Designer Perspective</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Move forward automatically</td>
+<td>Program Arduino for forward motion control</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Turn left or right when obstacle is detected</td>
+<td>Implement obstacle detection algorithm</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Detect obstacles in front</td>
+<td>Integrate ultrasonic distance sensor</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Show object detection using red/green LED</td>
+<td>Design LED indicator circuit and logic</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Monitor surrounding air quality</td>
+<td>Integrate air quality sensor module</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Measure room temperature</td>
+<td>Interface temperature sensor with controller</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Measure distance to nearby objects</td>
+<td>Process ultrasonic sensor data</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Rotate head/sensor to scan surroundings</td>
+<td>Control servo motor for sensor rotation</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>Show battery level using LED indicator</td>
+<td>Implement battery monitoring circuit</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>Provide visual status feedback to the user</td>
+<td>Program status indication logic</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>Move safely without hitting objects</td>
+<td>Implement obstacle avoidance control</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>Work continuously with battery power</td>
+<td>Design power management system</td>
+</tr>
+
+</table>
+</section>
+<section class="card3" > 
+<div class="card-section">
+ <div class="card3"> 
+<h3 class="rotate-border">MORHOLOGICAL CHART </h3>
+
+<table class="team-table">
+<tr>
+<th>Sr. No.</th>
+<th>Subfunctions</th>
+<th>Means 1</th>
+<th>Means 2</th>
+<th>Means 3</th>
+<th>Means 4</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Move / Walk forward</td>
+
+<td>
+<img src="wheel-dc.png">
+<div >Wheels + DC motor</div>
+</td>
+
+<td>
+<img src="continuous-servo.png">
+<div >Continuous servo</div>
+</td>
+
+<td>
+<img src="gear-motor.png">
+<div >Gear motor</div>
+</td>
+
+<td>
+<img src="track-wheels.png">
+<div >Track wheels</div>
+</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Turn left or right (after obstacle detection)</td>
+
+<td>
+<img src="differential.png">
+<div >Differential wheel control</div>
+</td>
+
+<td>
+<img src="servo-steering.png">
+<div >Servo steering</div>
+</td>
+
+<td>
+<img src="dual-dc.png">
+<div >Dual DC motors</div>
+</td>
+
+<td>
+<img src="stepper-control.png">
+<div >Stepper motor control</div>
+</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Obstacle detection</td>
+
+<td>
+<img src="ultrasonic.png">
+<div >Ultrasonic sensor</div>
+</td>
+
+<td>
+<img src="ir-proximity.png">
+<div >IR proximity sensor</div>
+</td>
+
+<td>
+<img src="lidar.png">
+<div >Lidar sensor</div>
+</td>
+
+<td>
+<img src="bumper.png">
+<div >Bumper switch</div>
+</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Air quality sensor</td>
+
+<td>
+<img src="mq135.png">
+<div >MQ135 gas sensor</div>
+</td>
+
+<td>
+<img src="mq2.png">
+<div >MQ2 gas sensor</div>
+</td>
+
+<td>
+<img src="ccs811.png">
+<div >CCS811 air quality sensor</div>
+</td>
+
+<td>
+<img src="bme680.png">
+<div >BME680 sensor</div>
+</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Temperature sensing</td>
+
+<td>
+<img src="temp1.png">
+<div >Temperature sensor</div>
+</td>
+
+<td>
+<img src="temp2.png">
+<div >Temperature module</div>
+</td>
+
+<td>
+<img src="temp3.png">
+<div>Digital temperature IC</div>
+</td>
+
+<td>
+<img src="temp4.png">
+<div >Digital temp sensor</div>
+</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Distance measurement</td>
+
+<td>
+<img src="ultrasonic2.png">
+<div >Ultrasonic sensor</div>
+</td>
+
+<td>
+<img src="ir-distance.png">
+<div >IR distance sensor</div>
+</td>
+
+<td>
+<img src="tof.png">
+<div >ToF sensor</div>
+</td>
+
+<td>
+<img src="lidar2.png">
+<div >Lidar sensor</div>
+</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>LED status indication</td>
+
+<td>
+<img src="red-green.png">
+<div >Red/Green LED pair</div>
+</td>
+
+<td>
+<img src="bicolor.png">
+<div >Bi-color LED</div>
+</td>
+
+<td>
+<img src="rgb.png">
+<div >RGB LED</div>
+</td>
+
+<td>
+<img src="led-buzzer.png">
+<div >LED + buzzer</div>
+</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Head rotation / sensor control</td>
+
+<td>
+<img src="servo.png">
+<div >Servo motor</div>
+</td>
+
+<td>
+<img src="stepper.png">
+<div >Mini stepper motor</div>
+</td>
+
+<td>
+<img src="pan-tilt.png">
+<div >Pan-tilt servo mount</div>
+</td>
+
+<td>
+<img src="dc-geared.png">
+<div >DC geared motor</div>
+</td>
+</tr>
+</table>
+</section>
+<h3 class="rotate-border">FUNCTION TREE </h3>
+<section>
+
+
+<div class="card">
+
+<div class="tree">
+
+<!-- TOP -->
+<div class="box top">
+Ladybug Insectronics Model
+</div>
+
+<div class="line"></div>
+
+<!-- MAIN ROW -->
+<div class="row">
+
+<!-- ENVIRONMENT -->
+<div class="column">
+
+<div class="box category">
+Environment Monitoring
+</div>
+
+<div class="line"></div>
+
+<div class="box">Air Quality Sensing</div>
+<div class="box">Temperature Sensing</div>
+<div class="box">Distance Measurement</div>
+
+</div>
+
+<!-- MOVEMENT -->
+<div class="column">
+
+<div class="box category">
+Movement & Navigation
+</div>
+
+<div class="line"></div>
+
+<div class="box">Move / Walk Forward</div>
+<div class="box">Detect Obstacle</div>
+<div class="box">Turn Left / Right after Detection</div>
+<div class="box">Head Rotation / Sensor Direction Control</div>
+
+</div>
+
+<!-- STATUS -->
+<div class="column">
+
+<div class="box category">
+System Status Indication
+</div>
+
+<div class="line"></div>
+
+<div class="box">LED Status for Object Detection (Red / Green)</div>
+<div class="box">Battery Level Indication (LED)</div>
+
+</div>
+
+<!-- POWER -->
+<div class="column">
+
+<div class="box category">
+Power Management
+</div>
+
+<div class="line"></div>
+
+<div class="box">Supply Power to System</div>
+<div class="box">Monitor Battery Level</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<h3 class="rotate-border">PRODUCT ARCHITECTURE</h3>
+<section>
+<div class="card">
+
+<div class="tree">
+
+<div class="box top">
+Ladybug Insectronics Model
+</div>
+
+<div class="vline"></div>
+<div class="hline"></div>
+
+<div class="row">
+
+<!-- ENVIRONMENT -->
+<div class="group">
+
+<div class="box group-title">
+Environment Monitoring
+</div>
+
+<div class="items">
+<div class="box">Air Quality Sensing</div>
+<div class="box">Temperature Sensing</div>
+<div class="box">Distance Measurement</div>
+</div>
+
+</div>
+
+<!-- MOVEMENT -->
+<div class="group">
+
+<div class="box group-title">
+Movement & Navigation
+</div>
+
+<div class="items">
+<div class="box">Move / Walk Forward</div>
+<div class="box">Detect Obstacle</div>
+<div class="box">Turn Left / Right</div>
+<div class="box">Head Rotation</div>
+</div>
+
+</div>
+
+<!-- SYSTEM -->
+<div class="group">
+
+<div class="box group-title">
+System Status
+</div>
+
+<div class="items">
+<div class="box">LED Status</div>
+<div class="box">Battery Level Indicator</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
 </body>
 </html>
