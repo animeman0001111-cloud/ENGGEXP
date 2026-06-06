@@ -320,6 +320,209 @@ color:palegreen;
 font-weight:bold;
 
 }
+
+/* ===== CALCULATION SECTIONS ===== */
+
+.calc-section{
+margin:50px 0;
+}
+
+.calc-card{
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(16px);
+border:1px solid rgba(255,255,255,0.18);
+border-radius:18px;
+padding:40px 50px;
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
+max-width:900px;
+margin:0 auto;
+}
+
+.calc-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+align-items:start;
+}
+
+.calc-block{
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:12px;
+padding:25px 30px;
+}
+
+.calc-block h4{
+color:#00ffff;
+font-size:16px;
+letter-spacing:1px;
+margin:0 0 18px 0;
+text-transform:uppercase;
+border-bottom:1px solid rgba(0,255,255,0.3);
+padding-bottom:10px;
+}
+
+.calc-line{
+font-size:17px;
+line-height:2;
+padding:4px 0;
+border-bottom:1px solid rgba(255,255,255,0.08);
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.calc-line:last-child{
+border-bottom:none;
+}
+
+.calc-label{
+color:rgba(255,255,255,0.6);
+font-size:14px;
+min-width:160px;
+}
+
+.calc-value{
+color:#ffaf7b;
+font-weight:bold;
+font-size:17px;
+}
+
+.calc-formula{
+font-family:'Courier New', monospace;
+background:rgba(0,255,255,0.08);
+border:1px solid rgba(0,255,255,0.25);
+border-radius:8px;
+padding:18px 22px;
+margin:12px 0;
+font-size:16px;
+color:#00ffff;
+letter-spacing:0.5px;
+line-height:1.9;
+}
+
+.calc-formula span{
+color:#ffaf7b;
+}
+
+.calc-formula .result{
+color:#00ff99;
+font-weight:bold;
+font-size:18px;
+}
+
+.calc-note{
+font-size:13px;
+color:rgba(255,255,255,0.5);
+margin-top:8px;
+font-style:italic;
+}
+
+.calc-highlight{
+color:#00ff99;
+font-weight:bold;
+}
+
+.calc-highlight-yellow{
+color:#ffcc00;
+font-weight:bold;
+}
+
+.calc-badge{
+display:inline-block;
+background:linear-gradient(135deg,#3a1c71,#d76d77);
+border-radius:6px;
+padding:3px 12px;
+font-size:13px;
+margin-left:8px;
+vertical-align:middle;
+}
+
+.calc-divider{
+height:1px;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent);
+margin:20px 0;
+}
+
+.example-box{
+background:rgba(255,204,0,0.08);
+border:1px solid rgba(255,204,0,0.3);
+border-radius:10px;
+padding:16px 22px;
+margin-top:18px;
+}
+
+.example-box .ex-title{
+color:#ffcc00;
+font-weight:bold;
+font-size:14px;
+margin-bottom:10px;
+letter-spacing:1px;
+}
+
+.example-box .ex-line{
+font-size:15px;
+line-height:1.9;
+color:rgba(255,255,255,0.85);
+}
+
+.safety-box{
+background:rgba(255,0,150,0.1);
+border:1px solid rgba(255,0,150,0.35);
+border-radius:10px;
+padding:16px 22px;
+margin-top:18px;
+}
+
+.safety-box .sf-title{
+color:#ff69b4;
+font-weight:bold;
+font-size:14px;
+margin-bottom:10px;
+letter-spacing:1px;
+}
+
+.safety-box .sf-line{
+font-size:15px;
+line-height:1.9;
+color:rgba(255,255,255,0.85);
+}
+
+@media(max-width:700px){
+.calc-grid{grid-template-columns:1fr;}
+}
+
+/* ===== SECTION SUB-HEADINGS ===== */
+.section-heading{
+font-size:38px;
+color:white;
+padding:16px 36px;
+margin:50px 0 10px 0;
+border-left:6px solid;
+border-image:linear-gradient(180deg,#ff00cc,#00ffff,#00ff99) 1;
+background:rgba(0,0,0,0.3);
+border-radius:0 10px 10px 0;
+letter-spacing:1.5px;
+animation:gradientMove 8s ease infinite;
+}
+
+.sub-heading{
+font-size:24px;
+color:#00ffff;
+padding:12px 30px;
+margin:30px 0 16px 0;
+border-left:4px solid #00ffff;
+background:rgba(0,255,255,0.06);
+border-radius:0 8px 8px 0;
+letter-spacing:1px;
+}
+
+.sub-heading span{
+color:rgba(255,255,255,0.5);
+font-size:18px;
+margin-right:10px;
+}
+
 </style>
 
 </head>
@@ -1068,18 +1271,473 @@ System Status
 
 </div>
 </section>
-	
+
+
+<!-- ==========================================
+     ADAPTER SELECTION CALCULATIONS
+     ========================================== -->
+
+<h3 class="rotate-border">ADAPTER SELECTION CALCULATIONS</h3>
+
+<section class="calc-section">
+<div class="calc-card">
+
+  <div class="calc-grid">
+
+    <!-- LEFT: Battery Specs -->
+    <div class="calc-block">
+      <h4>🔋 Battery Specifications</h4>
+
+      <div class="calc-line">
+        <span class="calc-label">Battery Type Used</span>
+        <span class="calc-value">3.7 V Li-Ion</span>
+      </div>
+      <div class="calc-line">
+        <span class="calc-label">Number of Batteries</span>
+        <span class="calc-value">2 Batteries (Series)</span>
+      </div>
+      <div class="calc-line">
+        <span class="calc-label">Combined Voltage</span>
+        <span class="calc-value calc-highlight">7.4 V</span>
+      </div>
+
+      <div class="calc-divider"></div>
+
+      <div class="calc-line">
+        <span class="calc-label">Normal Voltage</span>
+        <span class="calc-value">7.4 V</span>
+      </div>
+      <div class="calc-line">
+        <span class="calc-label">Fully Charged Voltage</span>
+        <span class="calc-value calc-highlight">8.4 V</span>
+      </div>
+
+      <div class="calc-note">Two 3.7 V batteries in series → 7.4 V nominal, 8.4 V fully charged</div>
+    </div>
+
+    <!-- RIGHT: Charger / Adapter Requirements -->
+    <div class="calc-block">
+      <h4>🔌 Charger / Adapter Requirements</h4>
+
+      <div class="calc-formula">
+        Charger Output Voltage = <span>8.4 V</span><br>
+        Current Rating = <span class="result">1 A to 2 A</span>
+      </div>
+
+      <div class="calc-divider"></div>
+
+      <div class="example-box">
+        <div class="ex-title">📌 Example Adapter Specification</div>
+        <div class="ex-line">Input Voltage &nbsp;&nbsp;: 7.4 V → <span class="calc-highlight">8.4 V</span></div>
+        <div class="ex-line">Current Rating : <span class="calc-highlight-yellow">1 – 2 A</span></div>
+        <div class="ex-line">Battery Capacity: <span class="calc-highlight">2200 mAh</span></div>
+        <div class="ex-line">Battery Type &nbsp;&nbsp;: Li-Ion (2S pack)</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Summary Row -->
+  <div style="margin-top:30px; background:rgba(0,255,200,0.07); border:1px solid rgba(0,255,200,0.25); border-radius:10px; padding:18px 28px;">
+    <div style="color:#00ffcc; font-weight:bold; letter-spacing:1px; margin-bottom:10px; font-size:14px;">✅ SELECTED ADAPTER SOLUTION</div>
+    <div style="font-size:16px; line-height:2;">
+      Adapter Output: <span class="calc-highlight">8.4 V, 1–2 A</span> &nbsp;|&nbsp;
+      For: <span class="calc-highlight-yellow">2 × 3.7 V (2200 mAh) Li-Ion batteries in series</span>
+    </div>
+  </div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     MOTOR SELECTION CALCULATIONS
+     ========================================== -->
+
+<h3 class="rotate-border">MOTOR SELECTION CALCULATIONS</h3>
+
+<section class="calc-section">
+<div class="calc-card">
+
+  <div class="calc-grid">
+
+    <!-- LEFT: Force & Torque -->
+    <div class="calc-block">
+      <h4>⚙️ Force &amp; Torque Calculation</h4>
+
+      <div class="calc-formula">
+        <b>Step 1 — Weight Force</b><br>
+        F = m × g<br>
+        F = <span>0.7</span> × <span>9.81</span><br>
+        F = <span class="result">6.867 N</span>
+      </div>
+
+      <div class="calc-formula">
+        <b>Step 2 — Torque (T = F × r)</b><br>
+        r = wheel radius = <span>0.0636 m</span><br>
+        T = 6.867 × 0.0636<br>
+        T = <span class="result">0.4367 N·m</span>
+      </div>
+
+      <div class="calc-formula">
+        <b>Step 3 — Convert to kg·cm</b><br>
+        T = 0.4367 × 10.197<br>
+        T = <span class="result">4.45 kg·cm</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: Safety Factor -->
+    <div class="calc-block">
+      <h4>🛡️ Safety Factor &amp; Final Selection</h4>
+
+      <div class="calc-line">
+        <span class="calc-label">Mass of Robot (m)</span>
+        <span class="calc-value">0.7 kg</span>
+      </div>
+      <div class="calc-line">
+        <span class="calc-label">Gravity (g)</span>
+        <span class="calc-value">9.81 m/s²</span>
+      </div>
+      <div class="calc-line">
+        <span class="calc-label">Wheel Radius (r)</span>
+        <span class="calc-value">0.0636 m (6.36 cm)</span>
+      </div>
+      <div class="calc-line">
+        <span class="calc-label">Calculated Torque</span>
+        <span class="calc-value">4.45 kg·cm</span>
+      </div>
+
+      <div class="calc-divider"></div>
+
+      <div class="safety-box">
+        <div class="sf-title">🔒 Safety Factor Applied</div>
+        <div class="sf-line">
+          Safety Factor = <span class="calc-highlight-yellow">1.8</span><br>
+          Required Torque = 1.8 × 4.45<br>
+          Required Torque = <span class="calc-highlight" style="font-size:18px; font-weight:bold;">8.01 kg·cm</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Summary Row -->
+  <div style="margin-top:30px; background:rgba(0,255,200,0.07); border:1px solid rgba(0,255,200,0.25); border-radius:10px; padding:18px 28px;">
+    <div style="color:#00ffcc; font-weight:bold; letter-spacing:1px; margin-bottom:10px; font-size:14px;">✅ SELECTED MOTOR SPECIFICATION</div>
+    <div style="font-size:16px; line-height:2;">
+      Minimum Motor Torque Required: <span class="calc-highlight" style="font-size:19px;">8.01 kg·cm</span>
+      &nbsp;|&nbsp; With Safety Factor: <span class="calc-highlight-yellow">1.8×</span>
+      &nbsp;|&nbsp; Robot Mass: <span class="calc-highlight">0.7 kg</span>
+    </div>
+  </div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     SUSTAINABILITY CALCULATIONS
+     ========================================== -->
+
+<h3 class="rotate-border">9. EMBODIED ENERGY CALCULATIONS</h3>
+
+<!-- 9.1 Sub-heading -->
+<h4 class="sub-heading"><span>9.1</span> Embodied Energy of Your Prototype &nbsp;(Table)</h4>
+
+<section class="calc-section">
+<div class="calc-card">
+
+  <!-- Intro Formula -->
+  <div style="text-align:center; margin-bottom:30px;">
+    <div class="calc-formula" style="display:inline-block; font-size:20px; padding:16px 40px;">
+      Energy Formula &nbsp;:&nbsp; <span style="color:#ffaf7b; font-size:22px;">E = m × e</span>
+    </div>
+  </div>
+
+  <!-- Energy Calculation Grid -->
+  <div class="calc-grid">
+
+    <!-- LEFT: Component Energies -->
+    <div class="calc-block">
+      <h4>⚡ Energy Calculation per Component</h4>
+
+      <!-- 3D Print -->
+      <div style="margin-bottom:18px;">
+        <div style="color:#00ffff; font-weight:bold; margin-bottom:6px;">• 3-D Print</div>
+        <div class="calc-formula">
+          E = 0.15 × 90<br>
+          E = <span class="result">13.5 MJ</span>
+        </div>
+      </div>
+
+      <!-- BO Motor -->
+      <div style="margin-bottom:18px;">
+        <div style="color:#00ffff; font-weight:bold; margin-bottom:6px;">• BO Motor &nbsp;<span style="color:rgba(255,255,255,0.5); font-size:13px;">(60 rpm)</span></div>
+        <div class="calc-formula">
+          E = 0.03 × 70 = <span>2.1 MJ</span><br>
+          E (for two motors) = 2 × 2.1<br>
+          E = <span class="result">4.2 MJ</span>
+        </div>
+      </div>
+
+      <!-- Ln298 Motor Controller -->
+      <div style="margin-bottom:18px;">
+        <div style="color:#00ffff; font-weight:bold; margin-bottom:6px;">• Ln298 Motor Controller</div>
+        <div class="calc-formula">
+          E = 0.05 × 120<br>
+          E = <span class="result">6 MJ</span>
+        </div>
+      </div>
+
+      <!-- IR Sensor -->
+      <div>
+        <div style="color:#00ffff; font-weight:bold; margin-bottom:6px;">• IR Sensor</div>
+        <div class="calc-formula">
+          E = 0.01 × 120<br>
+          E = <span class="result">1.2 MJ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Totals & Components -->
+    <div class="calc-block">
+      <h4>📊 Total Embodied Energy &amp; Components</h4>
+
+      <!-- Total -->
+      <div style="background:rgba(0,255,150,0.08); border:1px solid rgba(0,255,150,0.3); border-radius:10px; padding:20px 24px; margin-bottom:20px;">
+        <div style="color:#00ff99; font-weight:bold; font-size:14px; letter-spacing:1px; margin-bottom:12px;">TOTAL EMBODIED ENERGY</div>
+        <div class="calc-formula" style="background:rgba(0,0,0,0.3); border-color:rgba(0,255,150,0.3);">
+          E<sub>Total</sub> = 13.5 + 4.2 + 6 + 1.2<br>
+          E<sub>Total</sub> = <span class="result" style="font-size:22px;">24.9 MJ</span>
+        </div>
+      </div>
+
+      <!-- Components Used -->
+      <div style="margin-bottom:20px;">
+        <div style="color:#ffaf7b; font-weight:bold; font-size:14px; letter-spacing:1px; margin-bottom:12px;">🔧 COMPONENTS USED</div>
+        <div class="calc-line">
+          <span class="calc-label">BO Motor</span>
+          <span class="calc-value">60 rpm</span>
+        </div>
+        <div class="calc-line">
+          <span class="calc-label">Motor Driver</span>
+          <span class="calc-value">L293N</span>
+        </div>
+        <div class="calc-line">
+          <span class="calc-label">Sensor</span>
+          <span class="calc-value">IR Sensor</span>
+        </div>
+        <div class="calc-line">
+          <span class="calc-label">Controller</span>
+          <span class="calc-value">ESP 32</span>
+        </div>
+      </div>
+
+      <!-- Revised Total -->
+      <div class="example-box">
+        <div class="ex-title">📌 E Revised (with ESP32 Controller)</div>
+        <div class="ex-line">
+          E<sub>revised</sub> = 13.5 + 4.2 + 6 + 1.2 + (ESP32 contribution)<br>
+          E<sub>revised</sub> = <span class="calc-highlight" style="font-size:20px; font-weight:bold;">25.2 MJ</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Prototype Embodied Energy Table -->
+  <div style="margin-top:35px;">
+    <div style="color:#00ffff; font-weight:bold; font-size:15px; letter-spacing:1px; margin-bottom:14px; text-transform:uppercase;">📋 Prototype Embodied Energy — Summary Table</div>
+    <table class="team-table">
+      <tr>
+        <th>Sr. No.</th>
+        <th>Component</th>
+        <th>Mass / Qty (m)</th>
+        <th>Embodied Energy (e) MJ/kg</th>
+        <th>Total Energy E = m × e (MJ)</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>3-D Printed Body</td>
+        <td>0.15 kg</td>
+        <td>90 MJ/kg</td>
+        <td class="calc-highlight">13.5 MJ</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>BO Motor (60 rpm) × 2</td>
+        <td>0.03 kg × 2</td>
+        <td>70 MJ/kg</td>
+        <td class="calc-highlight">4.2 MJ</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Ln298 Motor Controller</td>
+        <td>0.05 kg</td>
+        <td>120 MJ/kg</td>
+        <td class="calc-highlight">6 MJ</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>IR Sensor</td>
+        <td>0.01 kg</td>
+        <td>120 MJ/kg</td>
+        <td class="calc-highlight">1.2 MJ</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align:right; font-weight:bold; padding-right:20px;">E Total</td>
+        <td style="color:#00ff99; font-weight:bold; font-size:18px;">24.9 MJ</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align:right; font-weight:bold; padding-right:20px;">E Revised (with ESP32)</td>
+        <td style="color:#ffcc00; font-weight:bold; font-size:18px;">25.2 MJ</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Energy Summary Bar -->
+  <div style="margin-top:30px;">
+    <div style="color:#aaa; font-size:13px; margin-bottom:10px; letter-spacing:1px; text-transform:uppercase;">Energy Breakdown</div>
+    <div style="display:flex; gap:8px; align-items:stretch; border-radius:10px; overflow:hidden; height:44px;">
+      <div style="flex:13.5; background:linear-gradient(135deg,#3a1c71,#7b2f8a); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:bold; white-space:nowrap; padding:0 8px;">
+        3D Print<br>13.5 MJ
+      </div>
+      <div style="flex:4.2; background:linear-gradient(135deg,#d76d77,#c0392b); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:bold; white-space:nowrap; padding:0 6px;">
+        BO Motor<br>4.2
+      </div>
+      <div style="flex:6; background:linear-gradient(135deg,#f7971e,#ffaf7b); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:bold; color:#1a1a1a; white-space:nowrap; padding:0 6px;">
+        L293N<br>6 MJ
+      </div>
+      <div style="flex:1.5; background:linear-gradient(135deg,#00b09b,#96c93d); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:bold; color:#1a1a1a; white-space:nowrap; padding:0 4px;">
+        IR<br>1.2
+      </div>
+    </div>
+    <div style="display:flex; gap:20px; margin-top:10px; flex-wrap:wrap;">
+      <span style="font-size:12px; color:rgba(255,255,255,0.6);">🟣 3D Print: 13.5 MJ</span>
+      <span style="font-size:12px; color:rgba(255,255,255,0.6);">🔴 BO Motors: 4.2 MJ</span>
+      <span style="font-size:12px; color:rgba(255,255,255,0.6);">🟠 L293N: 6 MJ</span>
+      <span style="font-size:12px; color:rgba(255,255,255,0.6);">🟢 IR Sensor: 1.2 MJ</span>
+    </div>
+  </div>
+
+  <!-- Final Summary -->
+  <div style="margin-top:30px; background:rgba(0,255,200,0.07); border:1px solid rgba(0,255,200,0.25); border-radius:10px; padding:18px 28px;">
+    <div style="color:#00ffcc; font-weight:bold; letter-spacing:1px; margin-bottom:10px; font-size:14px;">✅ SUSTAINABILITY SUMMARY</div>
+    <div style="font-size:16px; line-height:2.2;">
+      Total Embodied Energy: <span class="calc-highlight" style="font-size:19px;">24.9 MJ</span>
+      &nbsp;|&nbsp; Revised (with ESP32): <span class="calc-highlight-yellow" style="font-size:19px;">25.2 MJ</span>
+      &nbsp;|&nbsp; Formula Used: <span class="calc-highlight">E = m × e</span>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- 9.2 Sub-heading -->
+<h4 class="sub-heading"><span>9.2</span> Embodied Energy of Your Prototype Using Alternate Material &nbsp;(Table)</h4>
+
+<section class="calc-section">
+<div class="calc-card">
+
+  <div style="text-align:center; margin-bottom:28px;">
+    <div class="calc-formula" style="display:inline-block; font-size:18px; padding:14px 36px;">
+      Same Formula &nbsp;:&nbsp; <span style="color:#ffaf7b; font-size:20px;">E = m × e</span> &nbsp;|&nbsp; <span style="color:#00ff99;">Alternate / Eco-friendly Materials</span>
+    </div>
+  </div>
+
+  <!-- Alternate Material Table -->
+  <div style="color:#00ffff; font-weight:bold; font-size:15px; letter-spacing:1px; margin-bottom:14px; text-transform:uppercase;">📋 Alternate Material Embodied Energy — Summary Table</div>
+  <table class="team-table">
+    <tr>
+      <th>Sr. No.</th>
+      <th>Component</th>
+      <th>Original Material</th>
+      <th>Alternate Material</th>
+      <th>Mass (m) kg</th>
+      <th>Embodied Energy (e) MJ/kg</th>
+      <th>Total E = m × e (MJ)</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Robot Body</td>
+      <td>3D Printed PLA</td>
+      <td style="color:#00ff99;">Bamboo / Plywood</td>
+      <td>0.15</td>
+      <td>5 MJ/kg</td>
+      <td class="calc-highlight">0.75 MJ</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>BO Motor × 2</td>
+      <td>Standard BO Motor</td>
+      <td style="color:#00ff99;">Energy-efficient DC Motor</td>
+      <td>0.03 × 2</td>
+      <td>70 MJ/kg</td>
+      <td class="calc-highlight">4.2 MJ</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Motor Driver</td>
+      <td>L293N (Plastic PCB)</td>
+      <td style="color:#00ff99;">Recycled PCB Module</td>
+      <td>0.05</td>
+      <td>80 MJ/kg</td>
+      <td class="calc-highlight">4.0 MJ</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Sensor</td>
+      <td>IR Sensor</td>
+      <td style="color:#00ff99;">Ultrasonic (lower energy)</td>
+      <td>0.01</td>
+      <td>100 MJ/kg</td>
+      <td class="calc-highlight">1.0 MJ</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Controller</td>
+      <td>ESP 32</td>
+      <td style="color:#00ff99;">ESP 32 (low-power mode)</td>
+      <td>0.02</td>
+      <td>100 MJ/kg</td>
+      <td class="calc-highlight">2.0 MJ</td>
+    </tr>
+    <tr>
+      <td colspan="6" style="text-align:right; font-weight:bold; padding-right:20px;">E Total (Original)</td>
+      <td style="color:#ffaf7b; font-weight:bold; font-size:17px;">25.2 MJ</td>
+    </tr>
+    <tr>
+      <td colspan="6" style="text-align:right; font-weight:bold; padding-right:20px;">E Total (Alternate)</td>
+      <td style="color:#00ff99; font-weight:bold; font-size:17px;">11.95 MJ</td>
+    </tr>
+  </table>
+
+  <!-- Comparison Summary -->
+  <div style="margin-top:30px; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+    <div style="background:rgba(255,100,100,0.08); border:1px solid rgba(255,100,100,0.3); border-radius:10px; padding:18px 22px; text-align:center;">
+      <div style="color:#ff7070; font-weight:bold; font-size:13px; letter-spacing:1px; margin-bottom:8px;">ORIGINAL PROTOTYPE</div>
+      <div style="font-size:32px; font-weight:bold; color:#ffaf7b;">25.2 MJ</div>
+      <div style="font-size:13px; color:rgba(255,255,255,0.5); margin-top:4px;">PLA + Standard Components</div>
+    </div>
+    <div style="background:rgba(0,255,100,0.08); border:1px solid rgba(0,255,100,0.3); border-radius:10px; padding:18px 22px; text-align:center;">
+      <div style="color:#00ff99; font-weight:bold; font-size:13px; letter-spacing:1px; margin-bottom:8px;">ALTERNATE MATERIALS</div>
+      <div style="font-size:32px; font-weight:bold; color:#00ff99;">11.95 MJ</div>
+      <div style="font-size:13px; color:rgba(255,255,255,0.5); margin-top:4px;">Bamboo + Eco Components</div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px; background:rgba(0,255,200,0.07); border:1px solid rgba(0,255,200,0.25); border-radius:10px; padding:18px 28px;">
+    <div style="color:#00ffcc; font-weight:bold; letter-spacing:1px; margin-bottom:10px; font-size:14px;">✅ ENERGY SAVING WITH ALTERNATE MATERIALS</div>
+    <div style="font-size:16px; line-height:2.2;">
+      Energy Saved: <span class="calc-highlight" style="font-size:19px;">13.25 MJ</span>
+      &nbsp;|&nbsp; Reduction: <span class="calc-highlight-yellow" style="font-size:19px;">~52.6%</span>
+      &nbsp;|&nbsp; Greener &amp; More Sustainable Design ♻️
+    </div>
+  </div>
+
+</div>
+</section>
+
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
